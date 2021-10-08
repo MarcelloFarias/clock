@@ -68,4 +68,3 @@ setInterval(function clockCounter() {
     displayClock.innerHTML = `${hours} : ${minutes} : ${seconds}`;
 
 }, 1000);
-
