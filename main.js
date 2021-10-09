@@ -6,9 +6,9 @@ let weekDay = today.getDay();
 let hours = today.getHours();
 let minutes = today.getMinutes();
 let seconds = today.getSeconds();
-const displayDate = document.querySelector('.date').innerHTML = `${day} / ${month + 1} / ${year}`;
+const displayDate = document.querySelector('.date').innerText = `${day} / ${month + 1} / ${year}`;
 const displayWeekDay = document.querySelector('.week-day');
-const displayClock = document.querySelector('.clock');
+const displayClock = document.querySelector('.clock-field');
 
 switch (weekDay) {
     case 0:
@@ -34,9 +34,9 @@ switch (weekDay) {
         break;
 }
 
-displayWeekDay.innerHTML = weekDay;
+displayWeekDay.innerText = weekDay;
 
-setInterval(function clockCounter() {
+setInterval(function () {
     seconds++;
 
     if (seconds > 59) {
@@ -53,18 +53,8 @@ setInterval(function clockCounter() {
         }
     }
 
-    if (seconds < 10) {
-        seconds = '0' + seconds;
-    }
+    let formatClock = `${hours < 10 ? '0' + hours : hours} : ${minutes < 10 ? '0' + minutes : minutes} : ${seconds < 10 ? '0' + seconds : seconds}`;
 
-    if (minutes < 10) {
-        minutes = '0' + minutes;
-    }
-
-    if (hours < 10) {
-        hours = '0' + hours;
-    }
-
-    displayClock.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+    displayClock.innerText = formatClock;
 
 }, 1000);
