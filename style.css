@@ -25,6 +25,7 @@ body {
     padding: 2rem;
     border-radius: 10px;
     width: 500px;
+    background:rgba(255, 255, 255, 0.1);
     color: #7289da;
     z-index: 1;
     backdrop-filter: blur(10px);
@@ -49,7 +50,7 @@ body {
     width: 100%;
 }
 
-.clock {
+.clock-field {
     font-size: 4rem;
 }
 
@@ -62,7 +63,7 @@ body {
         font-size: 1.5rem;
     }
 
-    .clock {
+    .clock-field {
         font-size: 3rem;
     }
 }
